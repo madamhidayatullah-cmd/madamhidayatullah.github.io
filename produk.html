@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk - Toko Sembako Sahara</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="produk.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">🛒 SaharaMart</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a class="active" href="produk.html">Produk</a>
+        <a href="keranjang.html">Keranjang <span id="cartBadge" class="badge" style="display: none;">●</span></a>
+    </nav>
+</header>
+
+<section class="produk-section">
+    <h1>Produk Kami</h1>
+    <div id="notification" style="display: none; background: #ffd166; color: #333; padding: 10px; border-radius: 5px; margin-bottom: 20px; text-align: center; font-weight: bold;">Produk berhasil ditambahkan ke keranjang!</div>
+    <div class="produk-list">
+        <div class="produk-card">
+            <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=200&h=160&fit=crop" alt="Beras Premium">
+            <h3>Beras Premium 5kg</h3>
+            <p class="harga">Rp 50,000</p>
+            <button onclick="addCart('Beras Premium 5kg', 50000)">Tambah ke Keranjang</button>
+        </div>
+        <div class="produk-card">
+            <img src="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=200&h=160&fit=crop" alt="Gula Pasir">
+            <h3>Gula Pasir 1kg</h3>
+            <p class="harga">Rp 15,000</p>
+            <button onclick="addCart('Gula Pasir 1kg', 15000)">Tambah ke Keranjang</button>
+        </div>
+        <div class="produk-card">
+            <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=200&h=160&fit=crop" alt="Minyak Goreng">
+            <h3>Minyak Goreng 1L</h3>
+            <p class="harga">Rp 20,000</p>
+            <button onclick="addCart('Minyak Goreng 1L', 20000)">Tambah ke Keranjang</button>
+        </div>
+        <div class="produk-card">
+            <img src="https://images.unsplash.com/photo-1506976785307-8732e854ad03?w=200&h=160&fit=crop" alt="Telur Ayam">
+            <h3>Telur Ayam 1kg</h3>
+            <p class="harga">Rp 25,000</p>
+            <button onclick="addCart('Telur Ayam 1kg', 25000)">Tambah ke Keranjang</button>
+        </div>
+        <div class="produk-card">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=160&fit=crop" alt="Tepung Terigu">
+            <h3>Tepung Terigu 1kg</h3>
+            <p class="harga">Rp 12,000</p>
+            <button onclick="addCart('Tepung Terigu 1kg', 12000)">Tambah ke Keranjang</button>
+        </div>
+        <div class="produk-card">
+            <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=200&h=160&fit=crop" alt="Kopi Bubuk">
+            <h3>Kopi Bubuk 200g</h3>
+            <p class="harga">Rp 18,000</p>
+            <button onclick="addCart('Kopi Bubuk 200g', 18000)">Tambah ke Keranjang</button>
+        </div>
+        <div class="produk-card">
+            <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=200&h=160&fit=crop" alt="Susu Kental">
+            <h3>Susu Kental Manis 380g</h3>
+            <p class="harga">Rp 10,000</p>
+            <button onclick="addCart('Susu Kental Manis 380g', 10000)">Tambah ke Keranjang</button>
+        </div>
+        <div class="produk-card">
+            <img src="https://images.unsplash.com/photo-1551468747-edb7a7d43d18?w=200&h=160&fit=crop" alt="Mie Instans">
+            <h3>Mie Instans 5pcs</h3>
+            <p class="harga">Rp 5,000</p>
+            <button onclick="addCart('Mie Instans 5pcs', 5000)">Tambah ke Keranjang</button>
+        </div>
+        <div class="produk-card">
+            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=200&h=160&fit=crop" alt="Sabun Cuci">
+            <h3>Sabun Cuci Piring 200g</h3>
+            <p class="harga">Rp 8,000</p>
+            <button onclick="addCart('Sabun Cuci Piring 200g', 8000)">Tambah ke Keranjang</button>
+        </div>
+        <div class="produk-card">
+            <img src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=200&h=160&fit=crop" alt="Detergen">
+            <h3>Detergen Bubuk 1kg</h3>
+            <p class="harga">Rp 22,000</p>
+            <button onclick="addCart('Detergen Bubuk 1kg', 22000)">Tambah ke Keranjang</button>
+        </div>
+        <div class="produk-card">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=200&h=160&fit=crop" alt="Kecap Manis">
+            <h3>Kecap Manis 500ml</h3>
+            <p class="harga">Rp 12,000</p>
+            <button onclick="addCart('Kecap Manis 500ml', 12000)">Tambah ke Keranjang</button>
+        </div>
+        <div class="produk-card">
+            <img src="https://images.unsplash.com/photo-1472476443507-22c4d7a97c24?w=200&h=160&fit=crop" alt="Saus Tomat">
+            <h3>Saus Tomat 500g</h3>
+            <p class="harga">Rp 15,000</p>
+            <button onclick="addCart('Saus Tomat 500g', 15000)">Tambah ke Keranjang</button>
+        </div>
+        <div class="produk-card">
+            <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=200&h=160&fit=crop" alt="Teh Celup">
+            <h3>Teh Celup 25pcs</h3>
+            <p class="harga">Rp 10,000</p>
+            <button onclick="addCart('Teh Celup 25pcs', 10000)">Tambah ke Keranjang</button>
+        </div>
+        <div class="produk-card">
+            <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=200&h=160&fit=crop" alt="Biskuit">
+            <h3>Biskuit Marie 200g</h3>
+            <p class="harga">Rp 7,000</p>
+            <button onclick="addCart('Biskuit Marie 200g', 7000)">Tambah ke Keranjang</button>
+        </div>
+        <div class="produk-card">
+            <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=200&h=160&fit=crop" alt="Shampoo">
+            <h3>Shampoo 200ml</h3>
+            <p class="harga">Rp 15,000</p>
+            <button onclick="addCart('Shampoo 200ml', 15000)">Tambah ke Keranjang</button>
+        </div>
+        <div class="produk-card">
+            <img src="https://images.unsplash.com/photo-1559599101-f09722fb4948?w=200&h=160&fit=crop" alt="Pasta Gigi">
+            <h3>Pasta Gigi 150g</h3>
+            <p class="harga">Rp 8,000</p>
+            <button onclick="addCart('Pasta Gigi 150g', 8000)">Tambah ke Keranjang</button>
+        </div>
+        <div class="produk-card">
+            <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=200&h=160&fit=crop" alt="Sabun Mandi">
+            <h3>Sabun Mandi 100g</h3>
+            <p class="harga">Rp 5,000</p>
+            <button onclick="addCart('Sabun Mandi 100g', 5000)">Tambah ke Keranjang</button>
+        </div>
+        <div class="produk-card">
+            <img src="https://images.unsplash.com/photo-1585435557343-3b092031e2bb?w=200&h=160&fit=crop" alt="Tisu">
+            <h3>Tisu Wajah 100pcs</h3>
+            <p class="harga">Rp 12,000</p>
+            <button onclick="addCart('Tisu Wajah 100pcs', 12000)">Tambah ke Keranjang</button>
+        </div>
+        <div class="produk-card">
+            <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=200&h=160&fit=crop" alt="Minuman Soda">
+            <h3>Minuman Soda 1.5L</h3>
+            <p class="harga">Rp 6,000</p>
+            <button onclick="addCart('Minuman Soda 1.5L', 6000)">Tambah ke Keranjang</button>
+        </div>
+        <div class="produk-card">
+            <img src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=200&h=160&fit=crop" alt="Coklat Batang">
+            <h3>Coklat Batang 50g</h3>
+            <p class="harga">Rp 10,000</p>
+            <button onclick="addCart('Coklat Batang 50g', 10000)">Tambah ke Keranjang</button>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2025 Toko Sembako Sahara
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

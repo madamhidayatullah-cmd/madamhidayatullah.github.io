@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran - Toko Sembako Sahara</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">🛒 SaharaMart</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="produk.html">Produk</a>
+        <a href="keranjang.html">Keranjang <span id="cartBadge" class="badge" style="display: none;">●</span></a>
+    </nav>
+</header>
+
+<section style="padding: 50px; text-align: center;">
+    <h1>Pembayaran</h1>
+    <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); max-width: 500px; margin: 0 auto;">
+        <p>Total Pembayaran:</p>
+        <h2 id="totalBayar" style="color: #1f8a70; margin-bottom: 20px;"></h2>
+
+        <p id="statusPembayaran" style="margin-bottom: 20px; font-weight: bold;"></p>
+
+        <form id="paymentForm" style="margin-bottom: 30px;">
+            <p>Pilih Metode Pembayaran:</p>
+            <label style="display: block; margin-bottom: 10px;">
+                <input type="radio" name="paymentMethod" value="qris" required onchange="showPaymentDetails()"> QRIS
+            </label>
+            <label style="display: block; margin-bottom: 10px;">
+                <input type="radio" name="paymentMethod" value="cash" required onchange="showPaymentDetails()"> Cash (COD)
+            </label>
+            <label style="display: block; margin-bottom: 10px;">
+                <input type="radio" name="paymentMethod" value="bank" required onchange="showPaymentDetails()"> Bank Transfer
+            </label>
+        </form>
+
+        <div id="qrisDetails" style="display: none; margin-bottom: 30px;">
+            <h3>Scan QRIS</h3>
+            <img id="qrisImage" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=00020101021126660014ID.CO.QRIS.WWW011893600898000000000000000000152303UMI51440014ID.CO.QRIS.WWW0215ID10220000000000303UMI5204541153033605802ID5918Toko%20Sembako%20Sahara6013Jakarta%20Pusat61051234562070703A0163041234" alt="QRIS" style="width:200px;">
+            <br>
+            <button onclick="downloadQris()" style="background: #ffd166; color: #333; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer; margin-top: 10px;">Download QRIS</button>
+            <button onclick="konfirmasiBayar('qris')" style="background: #1f8a70; color: white; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer; margin-top: 20px;">Saya Sudah Scan QRIS</button>
+        </div>
+
+        <div id="cashDetails" style="display: none; margin-bottom: 30px;">
+            <h3>Cash (COD)</h3>
+            <p>Bayar di tempat saat pengiriman.</p>
+            <button onclick="konfirmasiBayar('cash')" style="background: #1f8a70; color: white; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer; margin-top: 20px;">Konfirmasi Pembayaran Cash</button>
+        </div>
+
+        <div id="bankDetails" style="display: none; margin-bottom: 30px;">
+            <h3>Bank Transfer</h3>
+            <p>Pilih Bank Tujuan:</p>
+            <div class="bank-options">
+                <div class="bank-card" onclick="selectBank('BCA')">
+                    <h4>🏦 BCA</h4>
+                    <p>1234567890</p>
+                    <p>a.n. SaharaMart</p>
+                </div>
+                <div class="bank-card" onclick="selectBank('Mandiri')">
+                    <h4>🏦 Mandiri</h4>
+                    <p>0987654321</p>
+                    <p>a.n. SaharaMart</p>
+                </div>
+                <div class="bank-card" onclick="selectBank('DANA')">
+                    <h4>📱 DANA</h4>
+                    <p>081234567890</p>
+                    <p></p>
+                </div>
+            </div>
+            <div id="selectedBank" style="display: none; margin-top: 20px;">
+                <p>Bank Terpilih: <span id="bankName"></span></p>
+                <div class="input-group">
+                    <label for="rekeningPengirim">Nomor Rekening Pengirim:</label>
+                    <input type="text" id="rekeningPengirim" class="input-field" placeholder="Masukkan nomor rekening Anda" required>
+                </div>
+                <div class="input-group">
+                    <label for="nominalTransfer">Nominal Transfer:</label>
+                    <input type="number" id="nominalTransfer" class="input-field" value="" readonly>
+                </div>
+                <button onclick="downloadBankDetails()" style="background: #ffd166; color: #333; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer; margin-top: 10px;">Download Detail Bank</button>
+                <button onclick="konfirmasiBayar('bank')" style="background: #1f8a70; color: white; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer; margin-top: 20px;">Konfirmasi Transfer</button>
+            </div>
+        </div>
+
+        <div id="strukContainer" style="display: none; margin-top: 30px;">
+            <h3>Struk Pembayaran</h3>
+            <img id="strukImage" src="" alt="Struk Pembayaran" style="width: 300px; border: 1px solid #ccc;">
+            <br>
+            <button onclick="downloadStruk()" style="background: #ffd166; color: #333; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer; margin-top: 10px;">Download Struk</button>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2025 Toko Sembako Sahara
+</footer>
+
+<script src="script.js"></script>
+<script>tampilTotalBayar();</script>
+</body>
+</html>

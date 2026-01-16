@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang - Toko Sembako Sahara</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">🛒 SaharaMart</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="produk.html">Produk</a>
+        <a class="active" href="keranjang.html">Keranjang</a>
+    </nav>
+</header>
+
+<section style="padding: 50px; text-align: center;">
+    <h1>Keranjang Belanja</h1>
+    <ul id="cart" style="list-style: none; padding: 0; margin: 20px 0;"></ul>
+    <h3 id="total" style="color: #1f8a70;"></h3>
+</section>
+
+<div class="checkout-bar" style="text-align: center;">
+    <a href="bayar.html" class="btn" style="display: block; margin: 0 auto; width: fit-content;">Bayar Sekarang</a>
+</div>
+
+<footer>
+    © 2025 Toko Sembako Sahara
+</footer>
+
+<script src="script.js"></script>
+<script>loadCart();</script>
+</body>
+</html>
